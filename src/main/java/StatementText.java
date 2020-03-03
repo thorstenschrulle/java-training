@@ -1,33 +1,37 @@
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
+
 public class StatementText {
     public static void main(String[] args) {
-        double r = Math.random();
-        if (r > 0.5) {
-            System.out.println("random number larger than 0.5");
-        } else {
-            System.out.println("smaller or equal 0.5");
-        }
-        int dice = 1;
-        switch (dice) {
-            case 1:
-                System.out.println("1");
-                break;
-            case 2:
-                System.out.println("2");
-                break;
-            default:
-                System.out.println("0");
+
+        Random r = new Random();
+        int geheimzahl = r.nextInt(1);
+        int anzahl = 0;
+
+        while (true) {
+            anzahl += 1;
+            System.out.println("Bitte gebe Deine Zahl ein:");
+            Scanner s = new Scanner((System.in));
+            try {
+                int eingabe = s.nextInt();
+                if (eingabe == geheimzahl) {
+                    if (anzahl == 1) {
+                        System.out.println("Klasse, Du hast " + anzahl + " Versuch gebraucht");
+                    } else System.out.println("Klasse, Du hast " + anzahl + " Versuche gebraucht");
+
+                    break;
+                } else {
+                    System.out.println("Falsch");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Nur Zahlen !!!");
+
+            }
+
         }
 
-        int i = 10;
-        while (i > 0) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        System.out.println(i);
-        i -= 1; //i--;
     }
 }
+
 

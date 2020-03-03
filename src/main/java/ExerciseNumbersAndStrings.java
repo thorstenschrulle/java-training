@@ -1,5 +1,3 @@
-package exercises;
-
 import java.util.Random;
 
 public class ExerciseNumbersAndStrings {
