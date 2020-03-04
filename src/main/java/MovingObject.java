@@ -1,5 +1,3 @@
-package object;
-
 public class MovingObject {
 
     private double posX  ;
