@@ -32,7 +32,7 @@ public class ExerciseLoops {
         } else if (n % 5 == 0) {
             return "buzz";
         }
-       return "" + n;
+        return "" + n;
 
     }
 
@@ -45,13 +45,13 @@ public class ExerciseLoops {
      * return 0 if a > b
      */
     static int summationWhile(int a, int b) {
-        if (a > b ) return 0;
+        if (a > b) return 0;
         int meineSumme = a;
         int z = 0;
         while (a <= b) {
-              meineSumme += z;
-              a++;
-              z = a;
+            meineSumme += z;
+            a++;
+            z = a;
         }
         return meineSumme;
     }
@@ -124,16 +124,21 @@ public class ExerciseLoops {
      * The function returns the resulting list of numbers
      */
     static List<Integer> threeNPlusOne(int n) {
-       List<Integer> list = new ArrayList<Integer>();
-       // list.add(99);
-        for (int i = n; i > 1; i--) {
+        List<Integer> list = new ArrayList<Integer>();
+        // list.add(99);
+        list.add(n);
+        while (n > 1) {
             if (n % 2 == 0) {
-                System.out.println(i);
-            }
-            }
+                n = n/2;
+                list.add(n);
 
+            } else if (n % 2 != 0) {
+                System.out.println(n);
+                n = n * 3 +1;
+                list.add(n);
+            }
         }
-
         return list;
     }
 }
+
