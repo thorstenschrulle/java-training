@@ -12,7 +12,8 @@ public class ExerciseLoops {
     static int max(int a, int b) {
         if (a >= b) {
             return a;
-        };
+        }
+        ;
         return b;
 
     }
@@ -86,14 +87,20 @@ public class ExerciseLoops {
      * Return true if c is a vowel (a,e,i,o,u), false otherwise
      */
     static boolean isVowel(char c) {
-        throw new RuntimeException("not implemented");
+        return "AEIOUaeiou".indexOf(c) != -1;
     }
 
     /**
      * return the number of vowels in string s
      */
     static int countVowels(String s) {
-        throw new RuntimeException("not implemented");
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (isVowel(s.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
@@ -109,7 +116,12 @@ public class ExerciseLoops {
      * palindrome('abcbb') -> False
      */
     static boolean palindrome(String s) {
-        throw new RuntimeException("not implemented");
+        for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+
+            if (s.charAt(i) != s.charAt(j))
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -129,12 +141,12 @@ public class ExerciseLoops {
         list.add(n);
         while (n > 1) {
             if (n % 2 == 0) {
-                n = n/2;
+                n = n / 2;
                 list.add(n);
 
             } else if (n % 2 != 0) {
                 System.out.println(n);
-                n = n * 3 +1;
+                n = n * 3 + 1;
                 list.add(n);
             }
         }
