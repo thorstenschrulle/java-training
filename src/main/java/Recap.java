@@ -1,13 +1,11 @@
 public class Recap {
     public static void main(String[] args) {
-        greeting("Anna","Doe");
-        greeting("Peter","Doe");
-        greeting("Otto","Doe");
-    }
+        Person p = new Person("Otto", "Kern");
+//        Person p2 = new Person();
 
-    public static void greeting(String firstname, String lastname) {
-        System.out.println("Hallo " + firstname + " " + lastname);
+        p.printPerson();
+        p.setLastName("sdfsdf");
+        System.out.println("Full Name: " +p.fullName());
     }
-
 }
 

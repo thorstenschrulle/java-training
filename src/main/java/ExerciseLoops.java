@@ -137,7 +137,6 @@ public class ExerciseLoops {
      */
     static List<Integer> threeNPlusOne(int n) {
         List<Integer> list = new ArrayList<Integer>();
-        // list.add(99);
         list.add(n);
         while (n > 1) {
             if (n % 2 == 0) {
@@ -145,7 +144,6 @@ public class ExerciseLoops {
                 list.add(n);
 
             } else if (n % 2 != 0) {
-                System.out.println(n);
                 n = n * 3 + 1;
                 list.add(n);
             }
